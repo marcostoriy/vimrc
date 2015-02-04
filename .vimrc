@@ -14,6 +14,8 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
+" NeoBundle 'mitechie/pyflakes-pathogen'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'tpope/vim-fugitive'
@@ -21,7 +23,13 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/nerdcommenter'
-
+NeoBundle 'https://github.com/davidhalter/jedi-vim.git'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'http://github.com/m2ym/rsense' 
+"NeoBundle 'Lokaltog/powerline'
+"NeoBundle 'Valloric/YouCompleteMe'
+   
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -59,23 +67,24 @@ endif
 
 " Uncomment the following to have Vim load indentation rules and plugins
 " according to the detected filetype.
-"if has("autocmd")
-"  filetype plugin indent on
-"endif
+if has("autocmd")
+  filetype plugin indent on
+endif
 
 
 "NERDTREE
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
+  "autocmd VimEnter * NERDTree
+  "autocmd BufEnter * NERDTreeMirror
 
 "autocmd VimEnter * :set number
-autocmd VimEnter * wincmd p
+  "autocmd VimEnter * wincmd p
 " auto close NERD Tree if the last code window is closed
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 " Remap to next/previous buffers ctrl-k/l
-nnoremap <silent> <C-k> :bn<CR>
-nnoremap <silent> <C-l> :bp<CR>
+nnoremap <silent> <C-l> :bn<CR>
+nnoremap <silent> <C-h> :bp<CR>
 
 
 "Alternative mappings
@@ -103,3 +112,6 @@ set tabstop=2
 set smartindent
 set shiftwidth=2
 set expandtab
+set t_Co=256
+set laststatus=2
+colorscheme railscasts
