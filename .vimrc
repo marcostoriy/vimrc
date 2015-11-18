@@ -82,7 +82,9 @@ endif
   "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   "autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
-" Remap to next/previous buffers ctrl-k/l
+nnoremap <silent> <C-b> :bp\|bd #<CR>
+
+" Remap to next/previous buffers ctrl-l/h
 nnoremap <silent> <C-l> :bn<CR>
 nnoremap <silent> <C-h> :bp<CR>
 
@@ -108,9 +110,9 @@ set showmatch		" Show matching brackets.
 "set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 set number
-set tabstop=2
+set tabstop=4
 set smartindent
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 set t_Co=256
 set laststatus=2
